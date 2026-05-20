@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Box } from '@mui/material'
 
-const RootLayout: FC = () => {
+const NotFoundLayout: FC = () => {
   return (
     <Box>
       <Outlet />
@@ -10,4 +10,4 @@ const RootLayout: FC = () => {
   )
 }
 
-export default RootLayout
+export default NotFoundLayout

@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Button, CssBaseline, ThemeProvider } from '@mui/material'
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { getTheme } from './config/theme.config'
+import Router from './router/Router'
 import type { ThemePreference } from './types/commont.types'
 import { resolveThemeMode } from './utils/theme-mode'
 import { THEME_STORAGE_KEY } from './constants/theme.const'
@@ -44,11 +47,10 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      app
-      {/* <Button onClick={() => changeThemePreference('light')}>Light</Button>
-      <Button onClick={() => changeThemePreference('dark')}>Dark</Button>
-      <Button onClick={() => changeThemePreference('system')}>System</Button> */}
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <CssBaseline />
+        <Router />
+      </LocalizationProvider>
     </ThemeProvider>
   )
 }

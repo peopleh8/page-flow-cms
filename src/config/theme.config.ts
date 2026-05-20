@@ -172,15 +172,15 @@ export const themeConfig = {
 
       text: {
         primary: 'rgba(0, 0, 0, 0.87)',
-        secondary: 'rgba(0, 0, 0, 0.6)',
+        secondary: 'hsl(220, 20%, 35%)',
         disabled: 'rgba(0, 0, 0, 0.38)',
       },
 
       divider: 'rgba(0, 0, 0, 0.12)',
 
       background: {
-        default: '#fff',
-        paper: '#fff',
+        default: 'rgba(255, 255, 255, 1)',
+        paper: 'hsl(220, 35%, 97%)',
       },
 
       action: {
@@ -216,9 +216,9 @@ export const themeConfig = {
       },
 
       secondary: {
-        main: '#ce93d8',
-        light: '#f3e5f5',
-        dark: '#ab47bc',
+        main: '#fff',
+        light: '#fff',
+        dark: '#fff',
         contrastText: 'rgba(0, 0, 0, 0.87)',
       },
 
@@ -254,15 +254,15 @@ export const themeConfig = {
 
       text: {
         primary: '#fff',
-        secondary: 'rgba(255, 255, 255, 0.7)',
+        secondary: 'hsl(220, 20%, 65%)',
         disabled: 'rgba(255, 255, 255, 0.5)',
       },
 
       divider: 'rgba(255, 255, 255, 0.12)',
 
       background: {
-        default: '#121212',
-        paper: '#121212',
+        default: 'rgba(5, 7, 10, 1)',
+        paper: 'hsl(220, 30%, 7%)',
       },
 
       action: {
@@ -328,7 +328,14 @@ export const getTheme = (mode: ThemeMode) =>
         fontFamily: FONT_FAMILY,
         fontWeight: 500,
         fontSize: '0.875rem',
-        lineHeight: 1.75,
+        lineHeight: 1.5,
+      },
+
+      body2: {
+        fontFamily: FONT_FAMILY,
+        fontWeight: 400,
+        fontSize: '0.75rem',
+        lineHeight: 1.66,
       },
 
       button: {
@@ -347,8 +354,24 @@ export const getTheme = (mode: ThemeMode) =>
       },
     },
 
+    spacing: 8,
+
     shape: {
-      borderRadius: 12,
+      borderRadius: 8,
+    },
+
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: (theme) => ({
+          html: {
+            colorScheme: theme.palette.mode,
+          },
+
+          body: {
+            colorScheme: theme.palette.mode,
+          },
+        }),
+      },
     },
 
     custom: tokens,
