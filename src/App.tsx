@@ -12,6 +12,7 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/600.css'
 import '@fontsource/roboto/700.css'
+import 'flag-icons/css/flag-icons.min.css'
 
 export default function App() {
   const [themePreference, setThemePreference] = useState<ThemePreference>(() => {

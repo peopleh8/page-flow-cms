@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { Box, Container } from '@mui/material'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import Header from '../../components/Header/Header'
+import Copyright from '../../components/Copyright/Copyright'
 
 const MainLayout: FC = () => {
   return (
@@ -26,6 +27,9 @@ const MainLayout: FC = () => {
             inset: 0,
             overflow: 'auto',
             py: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
           }}
         >
           <Container
@@ -39,6 +43,7 @@ const MainLayout: FC = () => {
               <Outlet />
             </Box>
           </Container>
+          <Copyright />
         </Box>
       </Box>
     </Box>

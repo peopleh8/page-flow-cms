@@ -12,22 +12,22 @@ const topMenu = [
   {
     id: 'home',
     label: 'Home',
-    icon: <HomeIcon sx={{ fontSize: 16 }} />,
+    icon: <HomeIcon sx={{ fontSize: 16, color: 'text.secondary' }} />,
   },
   {
     id: 'analytics',
     label: 'Analytics',
-    icon: <AnalyticsIcon sx={{ fontSize: 16 }} />,
+    icon: <AnalyticsIcon sx={{ fontSize: 16, color: 'text.secondary' }} />,
   },
   {
     id: 'clients',
     label: 'Clients',
-    icon: <GroupIcon sx={{ fontSize: 16 }} />,
+    icon: <GroupIcon sx={{ fontSize: 16, color: 'text.secondary' }} />,
   },
   {
     id: 'tasks',
     label: 'Tasks',
-    icon: <DescriptionIcon sx={{ fontSize: 16 }} />,
+    icon: <DescriptionIcon sx={{ fontSize: 16, color: 'text.secondary' }} />,
   },
 ]
 
@@ -35,17 +35,17 @@ const botMenu = [
   {
     id: 'settings',
     label: 'Settings',
-    icon: <SettingsSuggestIcon sx={{ fontSize: 16 }} />,
+    icon: <SettingsSuggestIcon sx={{ fontSize: 16, color: 'text.secondary' }} />,
   },
   {
     id: 'about',
     label: 'About',
-    icon: <InfoIcon sx={{ fontSize: 16 }} />,
+    icon: <InfoIcon sx={{ fontSize: 16, color: 'text.secondary' }} />,
   },
   {
     id: 'help',
     label: 'Help',
-    icon: <HelpIcon sx={{ fontSize: 16 }} />,
+    icon: <HelpIcon sx={{ fontSize: 16, color: 'text.secondary' }} />,
   },
 ]
 
@@ -65,7 +65,7 @@ const SidebarMenu: FC = () => {
             }}
           >
             <ListItemIcon>{menu.icon}</ListItemIcon>
-            <ListItemText>{menu.label}</ListItemText>
+            <ListItemText sx={{ opacity: 0.7 }}>{menu.label}</ListItemText>
           </MenuItem>
         ))}
       </MenuList>
@@ -82,7 +82,7 @@ const SidebarMenu: FC = () => {
             }}
           >
             <ListItemIcon>{menu.icon}</ListItemIcon>
-            <ListItemText>{menu.label}</ListItemText>
+            <ListItemText sx={{ opacity: 0.7 }}>{menu.label}</ListItemText>
           </MenuItem>
         ))}
       </MenuList>
