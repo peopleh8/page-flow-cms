@@ -19,6 +19,7 @@ const MainLayout: FC = () => {
         sx={{
           flex: 1,
           position: 'relative',
+          mt: { xs: '69px', md: 0 },
         }}
       >
         <Box

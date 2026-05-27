@@ -7,6 +7,7 @@ import Table from './components/Table/Table'
 import dayjs from 'dayjs'
 import { BarChart, LineChart } from '@mui/x-charts'
 import ProductTree from './components/ProductTree/ProductTree'
+import Using from './components/Using/Using'
 
 const userData = [20, 16, 21, 22, 21, 25, 18, 21, 22, 21, 23, 24, 24, 25, 24, 25, 24, 25, 24, 31, 24, 28, 27, 28, 27, 30, 38, 40]
 const conversionsData = [20, 16, 21, 22, 21, 25, 18, 21, 22, 21, 23, 24, 24, 25, 24, 25, 24, 25, 24, 31, 24, 28, 27, 28, 27, 30, 38, 40]
@@ -74,7 +75,7 @@ const Home: FC = () => {
           container
           spacing={2}
         >
-          <Grid size={3}>
+          <Grid size={{ md: 3, xs: 12 }}>
             <StatsCard
               title='Users'
               subtitle='Last 30 days'
@@ -84,7 +85,7 @@ const Home: FC = () => {
               <SparkLineChart {...getChartProps(userData, 25)} />
             </StatsCard>
           </Grid>
-          <Grid size={3}>
+          <Grid size={{ md: 3, xs: 12 }}>
             <StatsCard
               title='Conversions'
               subtitle='Last 30 days'
@@ -94,7 +95,7 @@ const Home: FC = () => {
               <SparkLineChart {...getChartProps(conversionsData, -25)} />
             </StatsCard>
           </Grid>
-          <Grid size={3}>
+          <Grid size={{ md: 3, xs: 12 }}>
             <StatsCard
               title='Event count'
               subtitle='Last 30 days'
@@ -105,12 +106,12 @@ const Home: FC = () => {
               <SparkLineChart {...getChartProps(eventsData)} />
             </StatsCard>
           </Grid>
-          <Grid size={3}>
+          <Grid size={{ md: 3, xs: 12 }}>
             <StatsCard withoutPadding>
               <Promo />
             </StatsCard>
           </Grid>
-          <Grid size={6}>
+          <Grid size={{ md: 6, xs: 12 }}>
             <StatsCard
               title='Sessions'
               subtitle='Sessions per day for the last 30 days'
@@ -169,7 +170,7 @@ const Home: FC = () => {
               />
             </StatsCard>
           </Grid>
-          <Grid size={6}>
+          <Grid size={{ md: 6, xs: 12 }}>
             <StatsCard
               title='Page views and downloads'
               subtitle='Page views and downloads for the last 6 months'
@@ -238,13 +239,13 @@ const Home: FC = () => {
           container
           spacing={2}
         >
-          <Grid size={9}>
+          <Grid size={{ md: 9, xs: 12 }}>
             <Table />
           </Grid>
-          <Grid size={3}>
+          <Grid size={{ md: 3, xs: 12 }}>
             <Stack spacing={2}>
               <ProductTree />
-              <div>flsdfklj</div>
+              <Using />
             </Stack>
           </Grid>
         </Grid>

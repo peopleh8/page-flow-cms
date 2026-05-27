@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react'
 import { Box, Chip, Typography } from '@mui/material'
+import Card from '../../../../components/Card/Card'
 
 type StatsCardProps = {
   title?: string
@@ -18,31 +19,12 @@ const StatsCard: FC<StatsCardProps> = ({ children, title, value, subtitle, chang
   const contentAlign = align !== 'center' && align !== 'space-between' ? `flex-${align}` : align
 
   return (
-    <Box
-      sx={{
-        height: '100%',
-        border: '1px solid',
-        borderColor: 'divider',
-        p: withoutPadding ? 0 : 2,
-        borderRadius: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        gap: 1,
-      }}
+    <Card
+      withoutPadding={withoutPadding}
+      title={title}
     >
-      {(title || value !== undefined || subtitle || change !== undefined) && (
+      {(value !== undefined || subtitle || change !== undefined) && (
         <Box>
-          {title && (
-            <Typography
-              variant='body1'
-              sx={{
-                mb: 1 / 2,
-              }}
-            >
-              {title}
-            </Typography>
-          )}
           {(value !== undefined || change !== undefined) && (
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: contentAlign, gap: 1 }}>
               {value !== undefined && (
@@ -78,7 +60,7 @@ const StatsCard: FC<StatsCardProps> = ({ children, title, value, subtitle, chang
         </Box>
       )}
       <Box sx={{ width: '100%' }}>{children}</Box>
-    </Box>
+    </Card>
   )
 }
 

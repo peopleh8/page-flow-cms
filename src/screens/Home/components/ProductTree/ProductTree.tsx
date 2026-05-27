@@ -1,6 +1,7 @@
 import { useState, type FC } from 'react'
-import { Box, Collapse, List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import { Box, Collapse, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import Card from '../../../../components/Card/Card'
 
 const ProductTree: FC = () => {
   const [open, setOpen] = useState(true)
@@ -10,18 +11,7 @@ const ProductTree: FC = () => {
   }
 
   return (
-    <Box
-      sx={{
-        border: '1px solid',
-        borderColor: 'divider',
-        borderRadius: 1,
-        p: 2,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 1,
-      }}
-    >
-      <Typography variant='body1'>Product tree</Typography>
+    <Card title='Product tree'>
       <List
         component='nav'
         sx={{
@@ -67,7 +57,7 @@ const ProductTree: FC = () => {
         </ListItemButton>
         <Box>
           <ListItemButton onClick={handleClick}>
-            <ListItemIcon sx={{ mr: 1 }}>
+            <ListItemIcon sx={{ mr: 1, transition: 'transform 0.3s ease', transform: open ? 'rotate(90deg)' : 'rotate(0deg)' }}>
               <ArrowForwardIosIcon sx={{ fontSize: 'small' }} />
             </ListItemIcon>
             <ListItemText primary='Contact' />
@@ -106,7 +96,7 @@ const ProductTree: FC = () => {
           <ListItemText primary='Help' />
         </ListItemButton>
       </List>
-    </Box>
+    </Card>
   )
 }
 

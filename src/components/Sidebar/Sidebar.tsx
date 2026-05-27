@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Drawer, useMediaQuery, type Theme } from '@mui/material'
 import type { FC } from 'react'
 import SidebarSwitcher from './SidebarProjectSwitcher'
 import SidebarMenu from './SidebarMenu'
@@ -6,14 +6,21 @@ import SidebarPromo from './SidebarPromo'
 import SidebarUser from './SidebarUser'
 
 const Sidebar: FC = () => {
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
+
   return (
-    <Box
-      component='aside'
+    <Drawer
+      variant={isMobile ? 'temporary' : 'permanent'}
+      anchor='left'
       sx={{
         width: '240px',
         backgroundColor: 'background.paper',
         display: 'flex',
         flexDirection: 'column',
+        '& .MuiDrawer-paper': {
+          border: 'none',
+          width: '240px',
+        },
       }}
     >
       <SidebarSwitcher />
@@ -24,7 +31,7 @@ const Sidebar: FC = () => {
         </Box>
       </Box>
       <SidebarUser />
-    </Box>
+    </Drawer>
   )
 }
 

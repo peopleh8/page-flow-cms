@@ -23,6 +23,7 @@
     "dayjs": "^1.11.20",
     "flag-icons": "^7.5.0",
     "react": "^19.2.6",
+    "react-circle-flags": "^0.0.29",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.2.6",
     "react-redux": "^9.3.0",
